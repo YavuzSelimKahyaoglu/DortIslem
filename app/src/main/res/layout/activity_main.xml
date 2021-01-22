@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/sayi1Text"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="39dp"
+        android:layout_marginEnd="60dp"
+        android:ems="10"
+        android:hint="1 . Sayı :"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/sayi2Text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/sayi2Text"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="103dp"
+        android:ems="10"
+        android:hint="2 . Sayı :"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sayi1Text" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="59dp"
+        android:layout_marginEnd="59dp"
+        android:layout_marginBottom="82dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/sonucText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sayi2Text">
+
+        <Button
+            android:id="@+id/sumButton"
+            android:layout_width="69dp"
+            android:layout_height="82dp"
+            android:text="+"
+            android:textSize="30sp" />
+
+        <Button
+            android:id="@+id/subButton"
+            android:layout_width="70dp"
+            android:layout_height="82dp"
+            android:text="-"
+            android:textSize="30sp" />
+
+        <Button
+            android:id="@+id/multiButton"
+            android:layout_width="72dp"
+            android:layout_height="82dp"
+            android:text="x"
+            android:textSize="30sp" />
+
+        <Button
+            android:id="@+id/divButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="/"
+            android:textSize="30sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/sonucText"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginEnd="52dp"
+        android:layout_marginBottom="51dp"
+        android:text="Sonuç:"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
