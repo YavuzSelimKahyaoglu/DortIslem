@@ -6,44 +6,68 @@ import android.view.View
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
+    var sayi1 : Int? = null
+    var sayi2 : Int? = null
+    var sonuc: Int? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
     }
 
-    fun sum(view: View){
-        var sayi1=sayi1Text.text.toString().toInt();
-        var sayi2=sayi2Text.text.toString().toInt();
+    fun sum(view : View){
 
-        var sonuc=(sayi1+sayi2).toString();
+        sayi1 = sayi1Text.text.toString().toIntOrNull()
+        sayi2 = sayi2Text.text.toString().toIntOrNull()
 
-        sonucText.text="Sonuç: ${sonuc}";
+        if(sayi1 == null || sayi2 == null){
+            sonucText.text = "Sayı girmeyi unutmayınız!"
+        } else {
+            sonuc = sayi1!! + sayi2!!
+            sonucText.text = "Sonuç: ${sonuc}"
+        }
+
+
+
     }
 
     fun sub(view: View){
-        var sayi1=sayi1Text.text.toString().toInt();
-        var sayi2=sayi2Text.text.toString().toInt();
+        sayi1 = sayi1Text.text.toString().toIntOrNull()
+        sayi2 = sayi2Text.text.toString().toIntOrNull()
 
-        var sonuc=(sayi1-sayi2).toString();
+        if(sayi1 == null || sayi2 == null){
+            sonucText.text = "Sayı girmeyi unutmayınız!"
+        } else {
+            sonuc = sayi1!! - sayi2!!
+            sonucText.text = "Sonuç: ${sonuc}"
+        }
 
-        sonucText.text="Sonuç: ${sonuc}";
-    }
 
-    fun multiply(view: View){
-        var sayi1=sayi1Text.text.toString().toInt();
-        var sayi2=sayi2Text.text.toString().toInt();
-
-        var sonuc=(sayi1*sayi2).toString();
-
-        sonucText.text="Sonuç: ${sonuc}";
     }
 
     fun divide(view: View){
-        var sayi1=sayi1Text.text.toString().toDouble();
-        var sayi2=sayi2Text.text.toString().toDouble();
+        sayi1 = sayi1Text.text.toString().toIntOrNull()
+        sayi2 = sayi2Text.text.toString().toIntOrNull()
 
-        var sonuc=(sayi1/sayi2).toString();
-
-        sonucText.text="Sonuç: ${sonuc}";
+        if(sayi1 == null || sayi2 == null){
+            sonucText.text = "Sayı girmeyi unutmayınız!"
+        } else {
+            sonuc = sayi1!! / sayi2!!
+            sonucText.text = "Sonuç: ${sonuc}"
+        }
     }
+
+    fun multiply(view: View){
+        sayi1 = sayi1Text.text.toString().toIntOrNull()
+        sayi2 = sayi2Text.text.toString().toIntOrNull()
+
+        if(sayi1 == null || sayi2 == null){
+            sonucText.text = "Sayı girmeyi unutmayınız!"
+        } else {
+            sonuc = sayi1!! * sayi2!!
+            sonucText.text = "Sonuç: ${sonuc}"
+        }
+    }
+
+
 }
